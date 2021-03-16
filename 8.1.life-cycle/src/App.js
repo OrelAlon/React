@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Click Me
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = { favoriteColor: 'Red', text: null };
+
+  componentDidMount() {
+    // console.log('componentDidMount');
+    setTimeout(() => this.setState({ favoriteColor: 'Pink!' }), 1000);
+  }
+  componentDidUpdate(x, prevState) {
+    // console.log('componentDidUpdate');
+
+    // console.log(x);
+    // console.log(prevState);
+    // console.log(this.state.favoriteColor);
+    if (prevState.favoriteColor !== this.state.favoriteColor) {
+      this.setState({
+        text: `The updated favorite color is ${this.state.favoriteColor}`,
+      });
+    }
+  }
+  render() {
+    // console.log('render');
+
+    return (
+      <div>
+        <h1>Orel fav color: {this.state.favoriteColor}</h1>
+        <div id='bla'>{this.state.text}</div>
+      </div>
+    );
+  }
 }
 
 export default App;
