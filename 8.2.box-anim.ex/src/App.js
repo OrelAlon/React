@@ -1,25 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import Box from './Box';
+import React from 'react';
 
-function App() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Click Me
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = { className: '' };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ className: 'box' });
+    }, 1000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    setTimeout(() => {
+      this.setState({ className: 'hide' });
+    }, 4000);
+  }
+
+  render() {
+    return (
+      <div>
+        <Box
+          className={this.state.className}
+          width='100px'
+          height='100px'
+          color='green'
+        />
+        <Box
+          className={this.state.className}
+          width='80px'
+          height='80px'
+          color='red'
+        />
+        <Box
+          className={this.state.className}
+          width='40px'
+          height='40px'
+          color='blue'
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
