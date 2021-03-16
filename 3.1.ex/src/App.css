@@ -43,7 +43,7 @@
   position: relative;
 }
 .box2 {
-  background-color: lightseagreen;
+  background-color: lightgrey;
   width: 400px;
   height: 250px;
   position: absolute;
@@ -53,7 +53,7 @@
 }
 .box3 {
   position: absolute;
-  background: lightskyblue;
+  background: pink;
   height: 200px;
   width: 300px;
   top: 50%;
