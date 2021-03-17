@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import CustomButton from './components/CustomButton';
 
-function App() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Click Me
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = { color: '' };
+
+  /////simple create btns function with set state on the way
+
+  handleMapBtns() {
+    const colors = ['blue', 'red', 'yellow']; ///the color ==num of btn
+    return colors.map((
+      pickColor /// map on this arr colors
+    ) => (
+      <CustomButton ////create btn
+        onClick={(setColor) => this.setState({ color: setColor })} //and for each btn do on click to change the set state
+        color={pickColor} ///name each btn
+      />
+    ));
+  }
+
+  // arr.map(i=> {<div>{i}</div>});
+
+  render() {
+    return (
+      <div>
+        {this.handleMapBtns()}
+        <h1 className={this.state.color}>
+          YOU PUSH ON THE COLOR: {this.state.color}
+        </h1>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+//////////////////////////////////////////////////
