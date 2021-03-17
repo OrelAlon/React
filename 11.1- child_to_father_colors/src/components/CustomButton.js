@@ -1,13 +1,14 @@
 import React from 'react';
-
 class CustomButton extends React.Component {
+  ///
+  ///
   render() {
     return (
       <button
         onClick={(e) => this.props.onClick(e.target.textContent)}
-        className={this.props.color}
+        className={this.props.nameBtn}
       >
-        {this.props.color}
+        {this.props.nameBtn}
       </button>
     );
   }

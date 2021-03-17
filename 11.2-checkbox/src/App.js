@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
+import Input from './Input';
 import './App.css';
 
-function App() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Click Me
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  createCheck() {
+    const texts = ['1', '2', '3', '4'];
+    return texts.map((t, i) =>
+      i < 2 ? (
+        <Input text={t} checked={false} />
+      ) : (
+        <Input text={t} checked={true} />
+      )
+    );
+  }
+  render() {
+    return (
+      <div>
+        <form action=''></form>
+        bla bla bla:
+        {this.createCheck()}
+        {/* <Input /> */}
+      </div>
+    );
+  }
 }
-
 export default App;

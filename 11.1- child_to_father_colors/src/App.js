@@ -14,7 +14,7 @@ class App extends React.Component {
     ) => (
       <CustomButton ////create btn
         onClick={(setColor) => this.setState({ color: setColor })} //and for each btn do on click to change the set state
-        color={pickColor} ///name each btn
+        nameBtn={pickColor} ///name each btn
       />
     ));
   }
