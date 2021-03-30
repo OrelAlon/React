@@ -18,7 +18,7 @@ function App() {
   rerum perspiciatis molestiae, a explicabo ad?`;
 
   //////my state
-  const [text, setText] = useState(myStory);
+  const [text, setText] = useState([{ myStory: myStory, isBtn: true }]);
   const [showBtn, setshowBtn] = useState(true);
   const [maxLength] = useState(20);
   /////////
