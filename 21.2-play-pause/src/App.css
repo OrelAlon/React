@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  width: 350px;
+}
+button {
+  display: inline;
+  padding: 15px;
+}
