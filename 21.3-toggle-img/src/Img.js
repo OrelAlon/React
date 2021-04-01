@@ -1,10 +1,17 @@
-const Img = ({ color }) => {
+import React, { useRef } from 'react';
+
+const Img = ({ src }) => {
+  const imgRef = useRef();
+
   return (
     <div>
       <img
-        // className={color && 'imgBoom'}
-        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8AgkgjyTKHmJxIdSNDOVDUWQN8PlK6Cj86Q&usqp=CAU'
-        alt='cc'
+        ref={imgRef}
+        className={''}
+        src={src}
+        alt='ff'
+        onMouseEnter={() => (imgRef.current.className = 'imgBoom')}
+        onMouseLeave={() => (imgRef.current.className = '')}
       />
     </div>
   );
